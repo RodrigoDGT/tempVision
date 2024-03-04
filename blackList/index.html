@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas</title>
+    
+    <script src="https://kit.fontawesome.com/ec59889f24.js" crossorigin="anonymous"></script>
+
+    <!-- <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css"> -->
+    <!-- <script src="../../bootstrap/js/bootstrap.bundle.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js" integrity="sha512-vRqhAr2wsn+/cSsyz80psBbCcqzz2GTuhGk3bq3dAyytz4J/8XwFqMjiAGFBj+WM95lHBJ9cDf87T3P8yMrY7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <p>teste</p>
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 96c61.9 0 112 50.1 112 112v25.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V208c0-61.9 50.1-112 112-112zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"/></svg>
+    <!-- <div class="m-5">
+        <div class="card">
+            <div class="card-body p-2">
+                <div class="row">
+                    <div class="col-2">
+                        <span>Placa: ILE3596</span><br>
+                        <span>Sem restrição</span><br>
+                        <span>Data: <span>01/02/2024 às 10:55</span></span>
+                    </div>
+                    <div class="col-1 text-center">
+                        <span>Avalie a OCR</span><br>
+                        <i class="fa-solid fa-thumbs-up fa-2x" style="color: #63E6BE;"></i>
+                        <i class="fa-solid fa-thumbs-up fa-2x fa-rotate-180 ms-4" style="color: #ff0000;"></i>
+                    </div>
+                    <div class="col-1">
+                        <a href="https://vision-safeway.s3.sa-east-1.amazonaws.com/89814693000160/192_168_29_19_09022024_120557_1_IVV9E69.jpg" target="_blank">
+                            <img src="https://vision-safeway.s3.sa-east-1.amazonaws.com/89814693000160/192_168_29_19_09022024_120557_1_IVV9E69.jpg" alt="Placa" style="min-height: 96px; max-width: 125px; border-radius: 6px; cursor: pointer;">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <span>Cidade: Dois Irmaos</span><br>
+                        <span>Ponto: Ponto C1</span><br>
+                        <span>Direção: Centro/Bairro</span><br>
+                        <span>End: Rua Pedro Gregórius x Rua Guilherme Engelman</span>
+                    </div>
+                    <div class="col-1 text-end">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                </div>
+                <div class="row" id="idShowImageFull">
+                    <p>teste</p>
+                    <img style="width:100%;" src="https://vision-safeway.s3.sa-east-1.amazonaws.com/89814693000160/192_168_29_19_09022024_120557_1_IVV9E69.jpg">
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="card mt-2 mb-1" style="max-width: 1140px;">
+        <div class="card-body bg-warning-subtle p-1" style="border-radius: 5px">
+            <div class="row justify-content-start">
+                <div class="col-auto pe-1">
+                    <p class="m-0">Placa: <span class="fw-bold">CBB6561</span></p>
+                    <p class=" mb-1">Roubo/Furto</p>
+                    <p class=" mb-1">Data: <span>14/02/2024 às 10:50</span></p>
+                </div>
+                <div class="col-auto p-0">
+                    <a href="javascript:void(0);" onclick="showFullImageOCRValidation('idShowImageFull01')">
+                        <img src="https://vision-safeway.s3.sa-east-1.amazonaws.com/88254875000160/192_168_28_39_14022024_105008_1_CBB6561.jpg" alt="Placa" style="min-height: 96px; max-width: 125px; border-radius: 6px; cursor: pointer;">
+                    </a>
+                </div>
+                <div class="col-4 ps-1 pe-0">
+                    <p class=" m-0">Cidade: Novo Hamburgo</p>
+                    <p class=" m-0">Ponto: Ponto C29</p>
+                    <p class=" m-0">Direção: ENTRADA</p>
+                    <p class=" m-0">End: Rua Primeiro de Março 5045 (Est Santo Afonso) 5045 (Est Santo Afonso) 5045 (Est Santo Afonso) 5045 (Est Santo Afonso)</p>
+                </div>
+                <div class="col-4">
+                    <p class=" m-0">Marca: undefined</p>
+                    <p class=" m-0">Modelo: undefined</p>
+                    <p class=" m-0">Cor/Tipo: undefined/undefined</p>
+                    <p class=" m-0">UF/Município: undefined/undefined 5045 (Est Santo Afonso) 5045 (Est Santo Afonso) 5045 (Est Santo Afonso)</p>
+                </div>
+                <div class="col text-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" style="cursor: pointer;" class="p-1" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Após apagar o alerta, a passagem pode ser visualizada na Pesquisa Avançada" aria-describedby="popover988860" data-bs-trigger="hover focus" onclick="deleteAlertRemoveDiv(event, 1114, true);"><path fill="#000000" d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z"></path></svg>
+                </div>
+            </div>
+            <div class="row card m-1" id="idShowImageFull01" style="display: none;">
+                <div class="col-auto text-center mb-1">
+                    <p class="fs-5 m-1">Avalie a acertividade da OCR e a qualidade da imagem</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512" style="cursor: pointer;" onclick="updateOCRValidator(event, 1114, 14550)" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="OCR correta" aria-describedby="popover988860" data-bs-trigger="hover focus"><path fill="#63E6BE" d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"></path></svg>
+                    <svg class="ms-3" xmlns="http://www.w3.org/2000/svg" height="32" width="40" viewBox="0 0 640 512" style="cursor: pointer;" onclick="updateOCRValidator(event, 1114, 14551)" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Placa ilegível" aria-describedby="popover988860" data-bs-trigger="hover focus"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223 149.5c48.6-44.3 123-50.8 179.3-11.7c60.8 42.4 78.9 123.2 44.2 186.9L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3L223 149.5zm-139.9 12c-11 14.4-20.5 28.7-28.4 42.2l339 265.7c18.7-5.5 36.2-13 52.6-21.8L83.1 161.5zm-50 86.3c-1.8 6.8-1.3 14 1.4 20.5c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c3.1 0 6.1-.1 9.2-.2L33.1 247.8z"></path></svg>
+                    <svg class="ms-3" xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512" style="cursor: pointer;" onclick="updateOCRValidator(event, 1114, 14552)" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="OCR incorreta" aria-describedby="popover988860" data-bs-trigger="hover focus"><path fill="#fe1616" d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg>
+                </div>
+                <img style="width:100%; border-radius: 5px;" class="p-0" src="https://vision-safeway.s3.sa-east-1.amazonaws.com/88254875000160/192_168_28_39_14022024_105008_1_CBB6561.jpg">
+            </div>
+        </div>
+    </div> -->
+    
+</body>
+<!-- 
+<style>
+    #idAlertIcon {
+        position: fixed;
+        top: 55px;
+        right: 25px;
+        z-index: 99;
+    }
+
+    .botaoNotificacao {
+    border-radius: 50% !important;
+    position: fixed; /* Deixa o botão fixo na tela */
+    top: 76px;
+    right: 25px;
+    z-index: 99; /* Define a ordem de sobreposição do botão */
+}
+
+.contadorAlerta {
+    position: absolute;
+    top: -10px; /* Ajuste para posicionar a bolinha acima do ícone */
+    right: -18px;
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 1; /* Garante que a bolinha fique sobreposta */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#idAlertIcon {
+    position: fixed;
+    top: 76px;
+    right: 25px;
+    z-index: 99;
+}
+
+.iconeComContador {
+    position: relative;
+    display: inline-block;
+}
+
+.numeroContador {
+    color: white;
+    font-size: 13px;
+}
+</style> -->
+
+</html>
