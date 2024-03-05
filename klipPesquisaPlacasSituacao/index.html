@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa Avançada</title>
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js" type="text/javascript"></script> -->
+
+    <!-- <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css"> -->
+    <!-- <script src="../../bootstrap/js/bootstrap.bundle.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js" integrity="sha512-vRqhAr2wsn+/cSsyz80psBbCcqzz2GTuhGk3bq3dAyytz4J/8XwFqMjiAGFBj+WM95lHBJ9cDf87T3P8yMrY7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+  <div style="overflow: hidden;">
+    <!-- Inputs de Pesquisa -->
+    <div class="row"> 
+      <div class="row col-12" style="padding-right: 0px; margin-bottom: 25px;">
+        <div class="col-1" style="max-width: 100px !important; margin-top: 3px;">
+          <label for="inputPlaca" class="form-label">Placa</label>
+          <input type="text" class="form-control" id="inputPlaca" maxlength="7" autocomplete="on">
+        </div>  
+        <div class="col-auto" style="margin-top: 3px;"> 
+          <label for="dropdownCidades" class="form-label">Cidade</label>
+          <div>      
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownCidades" data-bs-toggle="dropdown" data-target="#idDropdownCidades" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item 
+            </button>   
+            <div class="dropdown" id="idDropdownCidades">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownCidades">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto" style="margin-top: 3px;">
+          <label for="dropdownPontos" class="form-label">Pontos</label>
+          <div>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownPontos" data-bs-toggle="dropdown" data-target="#idDropdownPontos" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item
+            </button>
+            <div class="dropdown" id="idDropdownPontos">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownPontos">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto" style="margin-top: 3px;">
+          <label for="dropdownEndereco" class="form-label">Endereço</label>
+          <div>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownEndereco" data-bs-toggle="dropdown" data-target="#idDropdownEndereco" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item
+            </button>
+            <div class="dropdown" id="idDropdownEndereco">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownEndereco">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto" style="margin-top: 3px;">
+          <label for="dropdownBrand" class="form-label">Marca</label>
+          <div>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownBrand" data-bs-toggle="dropdown" data-target="#idDropdownBrand" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item
+            </button>
+            <div class="dropdown" id="idDropdownBrand">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownBrand">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto" style="margin-top: 3px;">
+          <label for="dropdownModel" class="form-label">Modelo</label>
+          <div>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownModel" data-bs-toggle="dropdown" data-target="#idDropdownModel" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item
+            </button>
+            <div class="dropdown" id="idDropdownModel">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownModel">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto" style="margin-top: 3px;">
+          <label for="dropdownColor" class="form-label">Cor</label>
+          <div>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownColor" data-bs-toggle="dropdown" data-target="#idDropdownColor" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item
+            </button>
+            <div class="dropdown" id="idDropdownColor">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownColor">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto" style="margin-top: 3px;">
+          <label for="dropdownCity" class="form-label">Município</label>
+          <div>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownCity" data-bs-toggle="dropdown" data-target="#idDropdownCity" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item
+            </button>
+            <div class="dropdown" id="idDropdownCity">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownCity">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto" style="margin-top: 3px;">
+          <label for="dropdownSituation" class="form-label">Situação</label>
+          <div>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownSituation" data-bs-toggle="dropdown" data-target="#idDropdownSituation" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item
+            </button>
+            <div class="dropdown" id="idDropdownSituation">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownSituation">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto" style="margin-top: 3px;">
+          <label for="dropdownUF" class="form-label">UF</label>
+          <div>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownUF" data-bs-toggle="dropdown" data-target="#idDropdownUF" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item
+            </button>
+            <div class="dropdown" id="idDropdownUF">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownUF">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto" style="margin-top: 3px;">
+          <label for="dropdownVehicleType" class="form-label">Tipo do Veículo</label>
+          <div>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownVehicleType" data-bs-toggle="dropdown" data-target="#idDropdownVehicleType" 
+              data-bs-auto-close="outside" aria-expanded="false">
+              Selecione um item
+            </button>
+            <div class="dropdown" id="idDropdownVehicleType">
+              <ul class="dropdown-menu pt-0" role="menu" aria-labelledby="dropdownVehicleType">
+                <li class="sticky-top">
+                  <input type="text" class="form-control" id="inputSearch" maxlength="50" oninput="filterSelectOptions(event)" placeholder="Pesquise.." autocomplete="off">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+
+
+        <div class="col-auto" style="width: 165px; margin-top: 3px; margin-right: 25px;">
+          <label for="inputInicio" class="form-label">Início</label>
+          <input type="datetime-local" class="form-control" id="inputInicio" placeholder="Data Inicio" style="height: 27px;">
+        </div>
+        <div class="col-auto" style="width: 165px; margin-top: 3px;">
+          <label for="inputFim" class="form-label">Fim</label>
+          <input type="datetime-local" class="form-control" id="inputFim" placeholder="Data Fim" style="height: 27px;">
+        </div>
+        <div class="row align-items-end col-auto" style="margin-top: 3px; margin-left: 30px;">
+          <button onclick="btnSearchClick()" class="btn btn-primary">Pesquisar</button>
+        </div>
+        <div class="row align-items-end col-auto" style="margin-top: 3px; margin-left: 14px;">
+          <button onclick="showDivSituacao()" class="btn btn-secondary">Consultar Situação RS</button>
+        </div>
+      </div>
+    </div>
+    <!-- Inputs de Pesquisa -->
+
+  
+    <!-- Table -->
+    <div style="min-height: 200px !important;  max-height: 1345px; overflow-y: auto; overflow-x: clip;">
+      <!-- Spinner DGT -->
+      <div class="row justify-content-center pb-3" id="idSpinnerSearchPlacas" >
+          <img class="rotate-image" src="https://cdnprojetos.s3.sa-east-1.amazonaws.com/imgLoading.png" style="width: 60px;">
+      </div>
+      <!-- Spinner DGT -->
+      <table class="table table-hover table-group-divider table-striped" id="idTableSearch">
+          <thead style="position: sticky; top: 0px;">
+              <tr>
+                  <th>Placa</th>
+                  <th>Data</th>
+                  <th>Imagem</th>
+                  <th>Marca/Modelo/Cor/Tipo</th>
+                  <th>Município/UF</th>
+                  <th>Situação</th>
+                  <th>Cidade/Ponto/Direção</th>
+                  <th>Endereço Ponto</th>
+              </tr>
+            </thead>
+            <tbody>
+            <!-- modulo ssp -->
+            <tr style="position: sticky; top: 35px;">
+              <td class="consultaroubo" id="idDivSituacaoConsultaPlacas" style="position: relative; margin-top: 10px; display: none; padding: 0px;" colspan="8"> 
+                <iframe id="consultaroubo-iframe" class="" allowfullscreen="" frameborder="0" src="https://secweb.procergs.com.br/sav/"
+                style="width: 100%; height: 200px; border-radius: 5px;"
+                ></iframe>
+                <svg xmlns="http://www.w3.org/2000/svg" height="23" width="23" viewBox="0 0 512 512"
+                    style="position: absolute; top: 5px; right: 22px; z-index: 99;" id="popover988658"
+                    data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="
+                        Consulta Roubo/Furto de Veículos SSP/RS - 
+                        O presente sistema foi desenvolvido com o objetivo de difundir rapidamente, em todo o Estado do Rio Grande do Sul, as consultas por placa dos veículos envolvidos em ocorrências de FURTO e/ou ROUBO de veículos.
+                        Dessa forma, por conta da agilidade na difusão das informações recomenda-se cautela extrema na abordagem policial, tendo em vista a suscetibilidade do sistema a registros indevidos.
+                        As informações disponibilizadas são oriundas dos serviços prestados pela SSP através dos fones 190 e registro de furtos de veículos da Polícia Civil, com o objetivo de agilizar e aumentar a recuperação de veículos em situação de furto e/ou roubo.
+                    " aria-describedby="popover988860"  data-bs-trigger="hover focus"
+                ><path fill="#001eff" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+              </td>
+            </tr>
+            <!-- modulo ssp -->
+              <tr>
+                <td colspan="8">Nenhum resultado encontrado, altere os parâmetros da pesquisa.</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+    <!-- Table -->
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="filtroPlacaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- Alimentado pelo JS -->
+        </div>
+        <div class="modal-body">
+          <!-- Alimentado pelo JS -->
+        </div>
+      </div>
+    </div> 
+  </div>
+  <!-- Modal -->
+
+</body>
+
+<style>
+    
+</style>
+
+</html>
